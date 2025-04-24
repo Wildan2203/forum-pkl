@@ -21,9 +21,12 @@ use App\Http\Controllers\AdminController;
 Route::get('/', function () {
     return view('master');
 });
+Route::get('/admin', function () {
+    return view('admin');
+});
 
 
-// Route::get('/admin', [AdminController::class, 'index']);
+
 
 Route::get('/allthreads', [ThreadsController::class, 'index']);
 
@@ -32,9 +35,6 @@ Route::post('/newthreads', [ThreadsController::class, 'store']);
 
 Route::get('/newthreads', function () {
     return view('newthreads');
-});
-Route::get('/mythreads', function () {
-    return view('mythreads');
 });
 
 Route::get('/reply', [ReplyController::class, 'index']);
@@ -48,3 +48,9 @@ Route::post('/register', [AuthController::class, 'store'])->name('register.submi
 //Routing halaman login
 Route::get('/login', [AuthController::class, 'index'])->name('login');
 Route::post('/login', [AuthController::class, 'authenticate'])->name('login.submit');
+
+
+
+
+//ADMIN
+Route::get('/admin', [AdminController::class, 'index']);

@@ -1,9 +1,9 @@
-@extends('temp-login')
-@section('judul_halaman', content: 'Register | Forum Discussion')
+@extends('temp-admin')
+@section('judul_halaman', content: 'Data Threads | Forum Discussion')
 @section('konten')
-<div class="fs-2 mb-4">All Threads</div>
+<div class="fs-2 mb-4">Data Threads</div>
 
-@forelse($threads as $thread)
+@foreach($threads as $thread)
 <div class="card mb-3">
   <div class="card-header">
     {{ $thread->user}}
@@ -14,4 +14,5 @@
     <a href="reply" class="btn btn-primary">Reply</a>
   </div>
 </div>
+@endforeach
 @endsection
