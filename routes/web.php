@@ -23,13 +23,16 @@ Route::get('/', function () {
 });
 
 
-Route::get('/admin', [AdminController::class, 'index']);
+// Route::get('/admin', [AdminController::class, 'index']);
 
 Route::get('/allthreads', [ThreadsController::class, 'index']);
 
 Route::get('/newthreads', [ThreadsController::class, 'create']);
 Route::post('/newthreads', [ThreadsController::class, 'store']);
 
+Route::get('/newthreads', function () {
+    return view('newthreads');
+});
 Route::get('/mythreads', function () {
     return view('mythreads');
 });

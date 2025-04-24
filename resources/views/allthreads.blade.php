@@ -5,7 +5,7 @@
 @section('konten')
 <div class="fs-2 mb-4">All Threads</div>
 
-@forelse($threads as $thread)
+@foreach($threads as $thread)
 <div class="card mb-3">
   <div class="card-header">
     {{ $thread->user}}
@@ -17,6 +17,6 @@
   </div>
 </div>
 
-@endforelse
+@endforeach
 
 @endsection
