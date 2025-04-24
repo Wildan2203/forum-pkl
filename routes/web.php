@@ -5,6 +5,7 @@ use App\Http\Controllers\ThreadsController;
 use App\Http\Controllers\ReplyController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,11 +21,15 @@ use App\Http\Controllers\UserController;
 Route::get('/', function () {
     return view('master');
 });
+
+
+Route::get('/admin', [AdminController::class, 'index']);
+
 Route::get('/allthreads', [ThreadsController::class, 'index']);
 
-Route::get('/newthreads', function () {
-    return view('newthreads');
-});
+Route::get('/newthreads', [ThreadsController::class, 'create']);
+Route::post('/newthreads', [ThreadsController::class, 'store']);
+
 Route::get('/mythreads', function () {
     return view('mythreads');
 });

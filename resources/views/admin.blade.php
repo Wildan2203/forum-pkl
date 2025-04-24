@@ -1,7 +1,5 @@
-@extends('master')
-
-@section('judul_halaman', content: 'All Threads | Forum Discussion')
-
+@extends('temp-login')
+@section('judul_halaman', content: 'Register | Forum Discussion')
 @section('konten')
 <div class="fs-2 mb-4">All Threads</div>
 
@@ -16,7 +14,4 @@
     <a href="reply" class="btn btn-primary">Reply</a>
   </div>
 </div>
-
-@endforelse
-
 @endsection
